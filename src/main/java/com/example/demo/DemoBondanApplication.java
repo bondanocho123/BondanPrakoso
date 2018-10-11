@@ -17,9 +17,16 @@ public class DemoBondanApplication {
 
     public static void main(String[] args) throws IOException
     {
-        SpringApplication.run(DemoBondanApplication.class, args);
+//        SpringApplication.run(DemoBondanApplication.class, args);
 
+        FizzBuzz CFizzBuzz = new FizzBuzz();
 
+        for (String fb : CFizzBuzz.printValFizzBuzz())
+        {
+            System.out.println(fb);
+        }
     }
+
+
 
 }

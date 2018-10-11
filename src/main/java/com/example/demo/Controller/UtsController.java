@@ -5,21 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/bangunruang")
-public class BangunRuangController
-{
+@RequestMapping("/uts")
+public class UtsController {
+
     @RequestMapping(value = {"/",""}, method = RequestMethod.GET)
+
     public String index()
     {
-        return "bangunruang/index";
+        return "uts/index";
     }
-
-    @RequestMapping(value = {"/segitiga",""}, method = RequestMethod.GET)
-    public String segitiga()
-    {
-        return "bangunruang/segitiga";
-    }
-
-
-
 }
