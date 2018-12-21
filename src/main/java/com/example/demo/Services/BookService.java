@@ -3,10 +3,15 @@ package com.example.demo.Services;
 import com.example.demo.Repositories.BookRepository;
 import com.example.demo.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
+@Transactional
 public class BookService {
+
     @Autowired
     BookRepository bookRepository;
 
@@ -20,7 +25,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book findBookId(Integer id)
+    public Book findBookById(Integer id)
     {
         return bookRepository.findBookById(id);
     }
