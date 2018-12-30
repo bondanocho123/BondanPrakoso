@@ -22,15 +22,15 @@ public class CustomerController
     CustomerRepository customerRepository;
 
     public String listCustomer(Model model){
-        model.addAttribute("customers", customerRepository.findAll());
+        model.addAttribute("Customer", customerRepository.findAll());
         return "customer/list";
     }
 
     @GetMapping("/insert")
     public String input(Model model) {
-        model.addAttribute("Customers", new Customer() {
+        model.addAttribute("Customer", new Customer() {
         });
-        return "customer/input";
+        return "customer/add";
     }
 
 
@@ -39,7 +39,7 @@ public class CustomerController
     public String saveCustomer(@Valid Customer customer, Model model)
     {
         customerRepository.save(customer);
-        model.addAttribute("Customers", customerRepository.findAll());
+        model.addAttribute("Customer", customerRepository.findAll());
         return "redirect:/customer";
     }
 
@@ -47,7 +47,7 @@ public class CustomerController
     public String editCustomer(@PathVariable("id") Integer id, Model model) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid  Customer Id" + id));
-        model.addAttribute("Customers", customer);
+        model.addAttribute("Customer", customer);
         return "customer/edit";
     }
 

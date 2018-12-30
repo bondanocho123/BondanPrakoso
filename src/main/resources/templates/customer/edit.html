@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+</head>
+<body>
+<h1>Edit Customer</h1>
+
+<form method="post" th:action="@{/customer/saveCustomer}" th:object="${Customer}">
+    <p>Customer ID : <input type="text" th:field="${Customer.id}" hidden></p>
+    <p>Customer Name : <input type="text" th:field="${Customer.namaCustomer}"></p>
+    <p>Birth Date : <input type="text" th:field="${Customer.tanggalLahir}"></p>
+    <p>No Telp: <input type="text" th:field="${Customer.nomorTelp}"></p>
+
+    <p><input type="submit" value="Submit Form"></p>
+</form>
+</body>
+</html>
