@@ -27,7 +27,7 @@ public class CustomerController
     }
 
     @GetMapping("/insert")
-    public String goToInput(Model model) {
+    public String input(Model model) {
         model.addAttribute("Customers", new Customer() {
         });
         return "customer/input";
@@ -61,11 +61,11 @@ public class CustomerController
 
 
     //Handling Date Error with converting string to date format
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(
-                dateFormat, false));
-    }
+//    @InitBinder
+//    protected void initBinder(WebDataBinder binder) {
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        binder.registerCustomEditor(Date.class, new CustomDateEditor(
+//                dateFormat, false));
+//    }
 
 }

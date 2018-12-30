@@ -28,7 +28,7 @@ public class CustomerService {
 
     public Customer findCustomerById(Integer id)
     {
-        return customerRepository.findCustomerById(id)
+        return customerRepository.findCustomerById(id);
     }
 
     public Customer findCustomerByName(String customerName)
